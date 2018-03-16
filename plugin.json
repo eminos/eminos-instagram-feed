@@ -1,0 +1,41 @@
+{
+    "name": "Instagram Feed",
+    "version": "1.0",
+    "description": "Displays Instagram images in a grid.",
+    "author": {
+        "name": "Emin Jasarevic",
+        "link": "https://github.com/eminos"
+    },
+    "data": {
+        "username": {
+            "label": "Username",
+            "type": "string"
+        },
+        "count": {
+            "label": "Image Count",
+            "info": "The number of images to display.",
+            "type": "number",
+            "value": 8
+        },
+        "columns": {
+            "label": "Columns",
+            "info": "The number of columns for the grid.",
+            "type": "number",
+            "value": 4
+        },
+        "gap": {
+            "label": "Grid Gap",
+            "info": "Gap between the items. Can be any valid CSS value.",
+            "type": "string",
+            "value": "1em"
+        },
+        "likes": {
+            "label": "Show number of likes.",
+            "type": "boolean"
+        },
+        "comments": {
+            "label": "Show number of comments.",
+            "type": "boolean"
+        }
+    }
+}

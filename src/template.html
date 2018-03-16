@@ -1,0 +1,22 @@
+<div id="instagram-feed" class="instagram-feed-container" :style="'grid-template-columns: repeat(' + settings.columns + ', 1fr); grid-gap: ' + settings.gap + ';'">
+    <div class="item" v-for="item, index in media" v-if="index < settings.count">
+
+        <a :href="'https://www.instagram.com/p/' + item.node.shortcode + '/'" target="_blank">
+
+            <div class="overlay"></div>
+
+            <img :src="item.node.thumbnail_src" alt="">
+
+            <div class="info" v-if="settings.likes || settings.comments">
+                <div class="likes" v-if="settings.likes">
+                    <font-awesome-icon icon="heart" /> {{ item.node.edge_liked_by.count }}
+                </div>
+                <div class="comments" v-if="settings.comments">
+                    <font-awesome-icon icon="comment" /> {{ item.node.edge_media_to_comment.count }}
+                </div>
+            </div>
+
+        </a>
+
+    </div>
+</div>
