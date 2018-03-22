@@ -2,6 +2,8 @@
 
 A [Koken](http://koken.me) plugin to display an Instagram feed in a grid layout wherever you'd like on your Koken website.
 
+![screenshot](https://i.imgur.com/HCb4AGl.jpg)
+
 ## How to install
 
 ### Prerequisites
@@ -14,7 +16,7 @@ The plugin should work with all Koken templates, including the ones that use pja
 
 1. `cd your-koken-website/storage/plugins`
 
-2. `git clone https://github.com/eminos/eminos-instagram-feed.git`
+2. `git clone https://github.com/eminos/eminos-instagram-feed.git` or download ZIP and extract to the directory in step 1.
 
 3. Enable and Setup the plugin in your Koken admin.
 
@@ -22,7 +24,9 @@ The plugin should work with all Koken templates, including the ones that use pja
 
 `<div id="instagram-feed"></div>`
 
-Use the "Insert custom code" if you're adding it to a Koken page. 
+Use the "Insert custom code" if you're adding it to a Koken page.
+
+Feel free to change the styling with custom CSS in Koken.
 
 ## Development
 
@@ -39,6 +43,7 @@ Use the "Insert custom code" if you're adding it to a Koken page.
 
 * [Vue.js](https://vuejs.org/)
 * [CSS Grid Layout](https://caniuse.com/#feat=css-grid) (!)
+* [fetch()](https://caniuse.com/#feat=fetch) (!)
 * [Font Awesome](https://fontawesome.com/)
 
 ## Contributing
