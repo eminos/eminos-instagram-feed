@@ -45,6 +45,8 @@ Use the "Insert custom code" if you're adding it to a Koken page.
 
 Please feel free to contribute to the code.
 
+* **Jonathan Rousseaux** - *Update: limit load of instagram-feed.js to essays and pages* - [JR-Photo.be](https://www.jr-photo.be)
+
 ## Authors
 
 * **Emin Jasarevic** - *Initial work* - [Soonce](https://www.soonce.com/en)
