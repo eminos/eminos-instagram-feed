@@ -10,8 +10,11 @@ class EminosInstagramFeed extends KokenPlugin
 
     public function add_head()
     {
+        $data = (array) $this->data;
+        $data['path'] = $this->get_path();
+
         echo '<link rel="stylesheet" href="' . $this->get_path() . '/dist/instagram-feed.css"/>';
-        echo '<script>window.instagram_feed_settings = ' . json_encode($this->data) . ';</script>';
+        echo '<script>window.instagram_feed_settings = ' . json_encode($data) . ';</script>';
     }
 
     public function add_body()

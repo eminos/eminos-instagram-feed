@@ -59,7 +59,7 @@ if (!!$.pjax && !window.eventSet) {
         setTimeout(() => {
             var body = document.querySelector('body');
             var script = document.createElement('script');
-            script.src = '/storage/plugins/eminos-instagram-feed/dist/instagram-feed.js';
+            script.src = window.instagram_feed_settings.path + '/dist/instagram-feed.js';
             script.id = 'instagram-feed-js';
             body.appendChild(script);
         }, 500);
