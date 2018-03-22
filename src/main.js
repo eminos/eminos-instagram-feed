@@ -16,6 +16,7 @@ if (document.querySelector('#instagram-feed')) {
         template: require('./template.html'),
         data: {
             settings: {},
+            user: null,
             media: []
         },
         mounted() {
@@ -30,6 +31,7 @@ if (document.querySelector('#instagram-feed')) {
                     }
 
                     response.json().then((data) => {
+                        this.user = data.graphql.user;
                         this.media = data.graphql.user.edge_owner_to_timeline_media.edges;
                     });
                 })

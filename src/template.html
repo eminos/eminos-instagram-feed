@@ -1,22 +1,47 @@
-<div id="instagram-feed" class="instagram-feed-container" :style="'grid-template-columns: repeat(' + settings.columns + ', 1fr); grid-gap: ' + settings.gap + ';'">
-    <div class="item" v-for="item, index in media" v-if="index < settings.count">
+<div id="instagram-feed" class="instagram-feed-container">
 
-        <a :href="'https://www.instagram.com/p/' + item.node.shortcode + '/'" target="_blank">
-
-            <div class="overlay"></div>
-
-            <img :src="item.node.thumbnail_src" alt="">
-
-            <div class="info" v-if="settings.likes || settings.comments">
-                <div class="likes" v-if="settings.likes">
-                    <font-awesome-icon icon="heart" /> {{ item.node.edge_liked_by.count }}
-                </div>
-                <div class="comments" v-if="settings.comments">
-                    <font-awesome-icon icon="comment" /> {{ item.node.edge_media_to_comment.count }}
-                </div>
+    <div class="profile" v-if="user && settings.profile">
+        <div class="pic" v-if="settings.profile_pic">
+            <a :href="'https://www.instagram.com/' + user.username + '/'" target="_blank">    
+                <img :src="user.profile_pic_url_hd" :alt="user.username">
+            </a>
+        </div>
+        <div class="info">
+            <h2 class="username" v-if="settings.profile_username">
+                <a :href="'https://www.instagram.com/' + user.username + '/'">{{ user.username }}</a>
+            </h2>
+            <h4 class="full_name" v-if="settings.profile_full_name">{{ user.full_name }}</h4>
+            <div class="stats" v-if="settings.profile_stats">
+                <div><strong>{{ user.edge_owner_to_timeline_media.count }}</strong> posts</div>
+                <div><strong>{{ user.edge_followed_by.count }}</strong> followers</div>
+                <div><strong>{{ user.edge_follow.count }}</strong> following</div>
             </div>
-
-        </a>
-
+            <div class="biography" v-if="settings.profile_biography">{{ user.biography }}</div>
+            <div class="external_url" v-if="settings.profile_external_url"><a :href="user.external_url" target="_blank">{{ user.external_url }}</a></div>
+        </div>
     </div>
+
+    <div class="feed" :style="'grid-template-columns: repeat(' + settings.columns + ', 1fr); grid-gap: ' + settings.gap + ';'">
+        <div class="item" v-for="item, index in media" v-if="index < settings.count">
+
+            <a :href="'https://www.instagram.com/p/' + item.node.shortcode + '/'" target="_blank">
+
+                <div class="overlay"></div>
+
+                <img :src="item.node.thumbnail_src" alt="">
+
+                <div class="info" v-if="settings.likes || settings.comments">
+                    <div class="likes" v-if="settings.likes">
+                        <font-awesome-icon icon="heart" /> {{ item.node.edge_liked_by.count }}
+                    </div>
+                    <div class="comments" v-if="settings.comments">
+                        <font-awesome-icon icon="comment" /> {{ item.node.edge_media_to_comment.count }}
+                    </div>
+                </div>
+
+            </a>
+
+        </div>
+    </div>
+    
 </div>

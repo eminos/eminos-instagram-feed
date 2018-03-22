@@ -1,6 +1,6 @@
 {
     "name": "Instagram Feed",
-    "version": "1.0",
+    "version": "1.1",
     "description": "Displays Instagram images in a grid.",
     "author": {
         "name": "Emin Jasarevic",
@@ -35,6 +35,34 @@
         },
         "comments": {
             "label": "Show number of comments.",
+            "type": "boolean"
+        },
+        "profile": {
+            "label": "Show profile section.",
+            "type": "boolean"
+        },
+        "profile_pic": {
+            "label": "Show profile picture.",
+            "type": "boolean"
+        },
+        "profile_username": {
+            "label": "Show username.",
+            "type": "boolean"
+        },
+        "profile_full_name": {
+            "label": "Show full name.",
+            "type": "boolean"
+        },
+        "profile_stats": {
+            "label": "Show statistics (posts, followers, following).",
+            "type": "boolean"
+        },
+        "profile_biography": {
+            "label": "Show biography.",
+            "type": "boolean"
+        },
+        "profile_external_url": {
+            "label": "Show extern url.",
             "type": "boolean"
         }
     }
