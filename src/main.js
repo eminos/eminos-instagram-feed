@@ -22,22 +22,22 @@ if (document.querySelector('#instagram-feed')) {
         mounted() {
             this.settings = window.instagram_feed_settings;
 
-            fetch('https://www.instagram.com/' + this.settings.username + '/?__a=1')
-                .then((response) => {
-                    if (response.status !== 200) {
-                        console.log('Looks like there was a problem. Status Code: ' +
-                            response.status);
-                        return;
-                    }
+            fetch('https://www.instagram.com/' + this.settings.username + '/')
+            .then((response) => response.text())
+            .then((html) => {
+                let r = new RegExp('<script type="text\/javascript">' + 
+                   '([^{]+?({.*profile_pic_url.*})[^}]+?)' +
+                   '<\/script>');
 
-                    response.json().then((data) => {
-                        this.user = data.graphql.user;
-                        this.media = data.graphql.user.edge_owner_to_timeline_media.edges;
-                    });
-                })
-                .catch(function (err) {
-                    console.log('Fetch Error :-S', err);
-                });
+                let jsonStr = html.match(r)[2];
+                let data = JSON.parse(jsonStr);
+                this.user = data.entry_data.ProfilePage[0].graphql.user;
+                this.media = data.entry_data.ProfilePage[0].graphql.user.edge_owner_to_timeline_media.edges;
+            })
+            .catch(function (err) {
+                console.log('Fetch Error :-S', err);
+            });
+
         }
     });
 
