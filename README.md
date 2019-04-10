@@ -62,4 +62,6 @@ This project is licensed under the MIT License.
 
 * Inspired by [wilsonlewis/koken-instagram-feed](https://github.com/wilsonlewis/koken-instagram-feed). The main difference between the plugins is that this one pulls in the Instagram feed with ajax when the page has loaded, instead of on the server side.
 
-* Using <a href="https://www.browserstack.com"><img src="https://user-images.githubusercontent.com/1682784/55908676-6068f480-5bda-11e9-8172-db7063dd8fb4.png" style=" margin: 0 10px; height: 50px; vertical-align: middle;"></a> for live and automated browser testing.
+<br>
+<a href="https://www.browserstack.com"><img src="https://user-images.githubusercontent.com/1682784/55908676-6068f480-5bda-11e9-8172-db7063dd8fb4.png" height="50"></a> <br>
+Using <a href="https://www.browserstack.com">BrowserStack</a> for live and automated browser testing.
